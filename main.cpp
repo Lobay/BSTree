@@ -15,27 +15,30 @@ class BSTree{
         if (root == nullptr) {
             root = new Node;
             root->data = data;
-            root->left = root->right = nullptr;
+            root->left = nullptr;
+            root->right = nullptr;
         }
         if (data < root->data) {
-            if (root->left != nullptr)
-            add ( root->left, data);
-            else {
+            if (root->left = nullptr)
+            {
                 root->left = new Node;
                 root->left->left = nullptr;
                 root->left->right = nullptr;
                 root->left->data = data;
             }
+            else {
+                add ( root->left, data);}
         }
         if (data > root->data) {
-            if (root->right != nullptr)
-            add (root->right, data);
-            else {
+            if (root->right = nullptr)
+            {
                 root->right = new Node;
                 root->right->left = nullptr;
                 root->right->right = nullptr;
                 root->right-> data = data;
             }
+            else{
+                add (root->right, data);}
         }
   }
         void element( int data ) { add (  root, data );}
