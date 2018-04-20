@@ -42,7 +42,17 @@ class BSTree{
         }
   }
         void element( int data ) { add (  root, data );}
-        ~BSTree() {}
+        void delete_tree(Node *&data) {
+            if (data != nullptr) {
+                delete_tree(data->left);
+                delete_tree(data->right);
+                delete data;
+                data = nullptr;
+            }
+        }
+        ~BSTree() {
+            delete_tree(root);
+        }
     };
 
 
@@ -88,6 +98,5 @@ int main(int argc, char* argv[]){
                 cout << " Неверная команда " << endl;
     }
     }
-    delete tree;
 
 }
