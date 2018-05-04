@@ -6,7 +6,6 @@ struct Node{
     int data;
     Node *left;
     Node *right;
-    Node *parent;
 };
 class BSTree{
     private:
